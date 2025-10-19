@@ -17,9 +17,7 @@ class Solution(object):
         for char in t:
             dict_t[char] = dict_t.get(char, 0) + 1
 
-        if dict_s == dict_t:
-            return True
-        return False
+        return dict_s == dict_t
         
         
 
