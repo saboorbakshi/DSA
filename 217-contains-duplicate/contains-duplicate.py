@@ -12,8 +12,8 @@ class Solution(object):
         
         # return False
 
-        if len(set(nums)) == len(nums):
-            return False
-        return True
+        if len(set(nums)) < len(nums):
+            return True
+        return False
 
         
