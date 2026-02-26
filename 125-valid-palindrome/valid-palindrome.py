@@ -9,13 +9,15 @@ class Solution(object):
             if char.isalnum():
                 newS += char.lower()
         
-        n = len(newS)
-        for i in range(n):
-            j = n - i - 1
-            if i != j and newS[i] != newS[j]:
-                return False
+        if newS == newS[::-1]:
+            return True
+        return False
         
-        return True
+        # n = len(newS)
+        # for i in range(n):
+        #     j = n - i - 1
+        #     if i != j and newS[i] != newS[j]:
+        #         return False
         
 
         
