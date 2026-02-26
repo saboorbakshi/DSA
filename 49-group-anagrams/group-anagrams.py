@@ -7,14 +7,23 @@ class Solution(object):
 
         """
         defaultdict(list) creates a dictionary where each new key automatically starts with an empty list as its default value
+        tuples are hashable. Lists and dictionaries are not in hashmaps.
         """
-        
-        dict_strs = {}
+        newList = []
         for s in strs:
-            counts = [0] * 26
-            for char in s:
-                counts[ord(char) - ord('a')] += 1
-            dict_strs.setdefault(tuple(counts), []).append(s)
+            newList.append(''.join(sorted(s)))
+        
+        hashmap = {}
+        for index, sortedS in enumerate(newList):
+            hashmap.setdefault(sortedS, []).append(index)
 
-        return list(dict_strs.values())
+        return [[strs[i] for i in indices] for indices in hashmap.values()]
+
+
+            
+
+
+
+
+
         
