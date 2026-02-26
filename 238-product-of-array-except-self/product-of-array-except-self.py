@@ -4,22 +4,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-       # prefixes = [1 for i in range(size)] (another way)
-        size = len(nums)
-        prefixes = [1] * size
-        suffixes = [1] * size
-        res = [1] * size
-
-        for i in range(1, size):
-            prefixes[i] = prefixes[i - 1] * nums[i - 1]
+        length = len(nums)
+        prefixes = [1] * length #left
+        suffixes = [1] * length #right
+        for i in range(1, length):
+            j = length - i - 1
+            prefixes[i] = nums[i - 1] * prefixes[i - 1]
+            suffixes[j] = nums[j + 1] * suffixes[j + 1]
+            # if i == 0:
+            #     prefixes[i] = 1
+            #     suffixes[i] = 1
+        return [prefixes[i] * suffixes[i] for i in range(length)]
         
-        # stops at i = -1, doesn't execute
-        for i in range(size - 2, -1, -1):
-            suffixes[i] = suffixes[i + 1] * nums[i + 1]
         
-        for i in range(size):
-            res[i] = prefixes[i] * suffixes[i]
 
-        print(suffixes)
-        print(prefixes)
-        return res         
+            
+
+            
