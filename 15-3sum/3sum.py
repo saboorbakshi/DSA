@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         ans = []
-        ans2 = []
+        # ans2 = []
         n = len(nums)
         nums.sort()
         for i in range(n):
@@ -21,7 +21,7 @@ class Solution(object):
             while lo < hi:
                 summ = nums[i] + nums[lo] + nums[hi]
                 if summ == 0:
-                    ans2.append([i, lo, hi])
+                    # ans2.append([i, lo, hi])
                     ans.append([nums[i], nums[lo], nums[hi]])
                     lo += 1
                     hi -= 1
@@ -37,8 +37,8 @@ class Solution(object):
                     lo += 1
                     while lo < hi and nums[lo] == nums[lo-1]:
                         lo += 1
-        print(nums)
-        print(ans2)
+        # print(nums)
+        # print(ans2)
         return ans
 
 
