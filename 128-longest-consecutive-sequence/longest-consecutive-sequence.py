@@ -19,8 +19,7 @@ class Solution(object):
             count = 1
             while num+count in uniqueNums:
                 count += 1
-            if count > maxCount:
-                maxCount = count
+            maxCount = max(count, maxCount)
         
         return maxCount
 
