@@ -9,9 +9,7 @@ class Solution(object):
             if char.isalnum():
                 newS += char.lower()
         
-        if newS == newS[::-1]:
-            return True
-        return False
+        return newS == newS[::-1]
         
         # n = len(newS)
         # for i in range(n):
