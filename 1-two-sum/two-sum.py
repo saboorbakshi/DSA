@@ -5,12 +5,26 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        # O(n^2)
+        # for index, num in enumerate(nums):
+        #     diff = target - num
+        #     for index2, num2 in enumerate(nums):
+        #         if index != index2 and diff == num2:
+        #             return [index, index2]
         
-        dict_nums = {}
+        hashmap = {}
+        for index, num in enumerate(nums):
+            hashmap[num] = index
+        
+        for index, num in enumerate(nums):
+            diff = target - num
+            if hashmap.get(diff) and index != hashmap.get(diff):
+                return [hashmap[diff], index]
+        
 
-        for i in range(len(nums)):
-            diff = target - nums[i]
-            if diff in dict_nums:
-                return [i, dict_nums[diff]]
-            else:
-                dict_nums[nums[i]] = i        
+
+
+        
+
+
+
