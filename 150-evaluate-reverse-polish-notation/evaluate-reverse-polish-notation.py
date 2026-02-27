@@ -8,7 +8,7 @@ class Solution(object):
             "+": operator.add,
             "-": operator.sub,
             "*": operator.mul,
-            "/": lambda a, b: int(a/b)
+            "/": lambda a, b: ceil(a/b) if a/b < 0 else floor(a/b)
         }
 
         stack = deque()
