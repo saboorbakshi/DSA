@@ -9,7 +9,8 @@ class MinStack(object):
         :type val: int
         :rtype: None
         """
-        if len(self.min) < 1:
+        # if len(self.min) < 1:
+        if not self.min:
             self.min.append(val)
         else:
             self.min.append(min(self.min[-1], val))
