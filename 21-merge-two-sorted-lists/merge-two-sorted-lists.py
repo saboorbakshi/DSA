@@ -17,10 +17,12 @@ class Solution:
                 curr = list2
                 list2 = list2.next
         
-        if list1 is None:
-            curr.next = list2
-        elif list2 is None:
-            curr.next = list1
+        # if list1 is None:
+        #     curr.next = list2
+        # elif list2 is None:
+        #     curr.next = list1
+
+        curr.next = list1 if list1 else list2
         
         return head.next
 
