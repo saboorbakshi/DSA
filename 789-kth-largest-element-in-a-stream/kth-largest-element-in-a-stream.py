@@ -6,6 +6,12 @@ class KthLargest:
         for num in nums:
             heapq.heappush(self.min_heap, num)
         
+        """
+        can use heapify to initialize 
+        self.min_heap = nums
+        heapq.heapify(self.min_heap)
+        """
+        
         while len(self.min_heap) > k:
             heapq.heappop(self.min_heap)
 
