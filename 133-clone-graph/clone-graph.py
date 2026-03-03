@@ -16,6 +16,7 @@ class Solution:
         visited = set()
         hashmap = {}
 
+        # create a mapping of node : cloned_node
         def dfs(node):
             if node in visited:
                 return
@@ -26,6 +27,7 @@ class Solution:
         
         dfs(node)
         
+        # use mapping to clone neighbors
         for node in hashmap:
             cloned_node = hashmap[node]
             for neighbor in node.neighbors:
